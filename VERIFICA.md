@@ -56,3 +56,13 @@ Nove test unittest passati: estrazione selettiva dei link, deduplicazione immagi
 La riproduzione dei film dai due host principali resta bloccata. Nel codice originale ci sono percorsi specifici per ciascun host, richieste native con header dedicati e resolver remoti aggiornabili: il resolver generico di Lume non li sostituisce tutti. È stata chiesta all'utente una prova dello stesso titolo nel Veezie originale per distinguere un blocco condiviso da una differenza del nuovo client. Non dichiarare il compito completamente raggiunto fino a una prova reale catalogo→sorgente→video.
 
 Nessun video di un film scaricato o riprodotto nei controlli. Nessuna pubblicazione o commit. Lume è avviata localmente su 127.0.0.1:8766 e non esposta in rete.
+# Verifica online0.3 — 02/11/2026
+
+Sito di produzione `https://lume-puce-nine.vercel.app`, API realmente eseguite su Vercel. Login con cookie persistente verificato; accesso anonimo a stato/media negato; origine estranea respinta; isolamento tra stati di due browser e ripristino del motore coperti da6 nuovi test. Suite complessiva61 test passati.
+
+Prova browser Edge headless verso il sito pubblico, nessun proxy sul PC: importazione canali, ricerca Matrix, dettaglio, risoluzione sorgente e riproduzione HLS reale. Video1920×800, durata dichiarata8177.874s, avanzamento1.008s poi pausa/chiusura. Non è una prova di visione completa. Nessuna sessione o cronologia del proprietario caricata nel repository. Schermate1440×900 e390×900 senza overflow; nessun errore JavaScript. Focus con frecce verificato in modalità TV1920×1080. Rapporti locali in `screens/cloud-browser.json` e `screens/cloud-smoke.json`, esclusi dal Git pubblico.
+
+APK contenitore Java/Android, stessa app HTTPS, target35/min26, icona e banner Leanback. Build e lint su GitHub Actions; firma privata fuori dalla repo. Il televisore e un telefono fisico non sono ancora stati collegati: installazione, telecomando reale e codec di quegli apparecchi restano da provare. Le verifiche desktop storiche sotto non sostituiscono questa prova hardware.
+
+---
+

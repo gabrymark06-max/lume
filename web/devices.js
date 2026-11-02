@@ -28,6 +28,9 @@
     if (current?.matches('input,textarea,select') && !current.matches('input[type="range"]')) return;
     if (event.key === 'Enter' && current?.tagName === 'VIDEO') {document.querySelector('#video-play')?.click();event.preventDefault();return;}
     if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key)) return;
+    if (current?.tagName === 'VIDEO' && event.key === 'ArrowDown') {
+      document.querySelector('#video-play')?.focus();event.preventDefault();event.stopImmediatePropagation();return;
+    }
     // Le frecce sul video conservano seek/volume; nei controlli muovono il focus.
     if (current?.tagName === 'VIDEO' || current?.matches('input[type="range"]')) return;
     const candidates = controls();

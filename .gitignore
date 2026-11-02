@@ -15,6 +15,9 @@ android/**/build/
 *.keystore
 state.json
 *.dpapi
+qa*.cjs
+qa_download.py
+dist/
 
 .vercel
 .env*

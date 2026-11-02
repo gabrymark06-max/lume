@@ -30,7 +30,9 @@ jobs:
         env:
           LUME_STORE_FILE: ${{ runner.temp }}/lume.jks
           LUME_STORE_PASSWORD: ${{ secrets.LUME_STORE_PASSWORD }}
-        run: gradle -p android assembleRelease lintRelease --no-daemon
+        run: |
+          gradle -p android assembleRelease lintRelease --no-daemon
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose android/app/build/outputs/apk/release/app-release.apk
       - uses: actions/upload-artifact@v4
         with:
           name: lume-android-tv
