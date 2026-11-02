@@ -1,0 +1,11 @@
+.git
+node_modules
+screens
+screens-parity
+reference-parity
+__pycache__
+android
+qa*
+test_*
+*.mp4
+.env*

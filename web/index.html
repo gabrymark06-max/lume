@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#131212">
+  <title>Lume · La tua videoteca</title>
+  <link rel="stylesheet" href="/app.css">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" type="image/png" href="/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <script defer src="/runtime-config.js"></script>
+  <script defer src="/cloud-client.js"></script>
+  <script defer src="/devices.js"></script>
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Vai al contenuto</a>
+  <svg class="svg-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9z"/></symbol>
+    <symbol id="i-channels" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h10M7 13h6m4 0h.01M7 16h10"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5M5.6 7a8 8 0 0 1 13.2-2L20 7M4 17l1.2 2A8 8 0 0 0 18.4 17"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.01"/></symbol>
+    <symbol id="i-discover" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5z"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="m9 3-1 3-3 1 1 3-2 2 2 2-1 3 3 1 1 3h6l1-3 3-1-1-3 2-2-2-2 1-3-3-1-1-3z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 4-8 8 8 8"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5zm4 4a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+  </svg>
+  <nav class="rail" aria-label="Navigazione principale">
+    <div class="rail-group"><button class="brand-mark" data-nav="home" aria-label="Lume, home" title="Lume"><b>L</b><span class="brand-name">Lume</span></button>
+    <div class="rail-items">
+      <button class="rail-link" data-nav="search" aria-label="Cerca" title="Cerca"><svg><use href="#i-search"/></svg><span>Cerca</span></button>
+      <button class="rail-link" data-nav="home" aria-label="Home" title="Home" aria-current="page"><svg><use href="#i-home"/></svg><span>Home</span></button>
+      <button class="rail-link" data-nav="discover" aria-label="Esplora" title="Esplora"><svg><use href="#i-discover"/></svg><span>Esplora</span></button>
+      <button class="rail-link" data-nav="favorites" aria-label="Watchlists" title="Watchlists"><svg><use href="#i-star"/></svg><span>Watchlists</span></button>
+      <button class="rail-link" data-nav="channels" aria-label="I miei canali" title="I miei canali"><svg><use href="#i-channels"/></svg><span>Canali</span></button>
+      <div class="rail-submenu"><button data-channel-dialog="manual">Aggiungi canale</button><button data-channel-dialog="list">Imposta lista automatica</button><button data-nav="channels">Gestisci canali</button></div>
+      <button class="rail-link" data-nav="settings" aria-label="Impostazioni" title="Impostazioni"><svg><use href="#i-settings"/></svg><span>Impostazioni</span></button>
+      <div class="rail-secondary"><button data-nav="history">Visti</button><button data-nav="library">Download e libreria</button><button data-nav="calendar">Calendario Serie TV</button></div>
+    </div>
+    </div>
+  </nav>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#home" aria-label="Lume, home">lume<span>.</span></a>
+      <form id="search-form" class="search-form" role="search">
+        <svg aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="sr-only" for="search-input">Cerca film o serie nei tuoi canali</label>
+        <input id="search-input" type="search" name="q" autocomplete="off" placeholder="Cerca film o serie…" enterkeyhint="search">
+        <button class="search-submit" type="submit">Cerca</button>
+      </form>
+      <button class="icon-button top-channels" data-nav="channels" aria-label="Gestisci canali" title="Gestisci canali"><svg><use href="#i-channels"/></svg></button>
+    </header>
+    <main id="content" tabindex="-1">
+      <div id="global-message" class="message global-message" role="status" hidden></div>
+      <section id="home-view" data-view-panel hidden><div id="hero" class="hero" hidden></div><div id="home-content"></div></section>
+      <section id="catalog-view" data-view-panel aria-labelledby="catalog-title">
+        <div class="section-heading catalog-heading">
+          <div><span id="catalog-eyebrow" class="eyebrow">LA TUA VIDEOTECA</span><h1 id="catalog-title">Esplora i tuoi canali</h1></div>
+          <button id="refresh-catalog" class="icon-button" aria-label="Ricarica il catalogo" title="Ricarica catalogo"><svg><use href="#i-refresh"/></svg></button>
+        </div>
+        <div class="filter-bar"><label class="sr-only" for="channel-select">Canale</label><select id="channel-select"><option value="">Tutti i canali</option></select><span id="result-count" class="muted"></span></div>
+        <div id="catalog-errors" class="catalog-errors" hidden></div>
+        <div id="catalog-loading" class="loading-state" hidden><span class="spinner"></span><p>Leggo i cataloghi dei canali…</p></div>
+        <div id="catalog-empty" class="empty-state" hidden></div>
+        <div id="media-grid" class="media-grid"></div>
+        <div class="pagination"><button id="load-more" class="button secondary" hidden>Mostra altri titoli <svg><use href="#i-arrow"/></svg></button></div>
+      </section>
+      <section id="discover-view" data-view-panel hidden><header class="page-title"><button class="icon-button" data-nav="home" aria-label="Torna alla home"><svg><use href="#i-back"/></svg></button><h1>Esplora</h1></header><div class="kind-tabs" data-tabs="discover"><button data-kind="movie" aria-selected="true">Film</button><button data-kind="series">Serie TV</button></div><form id="discover-filters" class="discover-filters"><label>Genere<select id="discover-genre"><option value="">Tutti i generi</option></select></label><label>Piattaforma<select id="discover-platform"><option value="">Tutte le piattaforme</option></select></label><label>Anno<input id="discover-year" type="number" min="1900" max="2100" placeholder="Tutti"></label><label>Ordina<select id="discover-sort"><option value="popular">Popolari</option><option value="rating">Più votati</option><option value="recent">Più recenti</option><option value="title">Titolo</option></select></label><button class="button secondary" type="submit">Applica filtri</button><button id="discover-reset" class="button ghost" type="button">Azzera</button></form><div id="discover-categories" class="category-grid"></div><div id="discover-results"></div><div class="pagination"><button id="discover-more" class="button secondary" hidden>Mostra altri titoli</button></div></section>
+      <section id="collection-view" data-view-panel hidden><header class="page-title"><button class="icon-button" data-nav="home" aria-label="Torna alla home"><svg><use href="#i-back"/></svg></button><h1 id="collection-title">I miei preferiti</h1><div class="page-tools"><button id="collection-select" class="icon-button" title="Seleziona titoli" aria-label="Seleziona titoli"><svg><use href="#i-trash"/></svg></button><button id="collection-menu" class="icon-button" title="Gestisci raccolte" aria-label="Gestisci raccolte">⋮</button></div></header><div class="collection-nav"><button data-nav="favorites">Watchlists</button><button data-nav="history">Visti</button><select id="watchlist-select" aria-label="Lista"><option value="favorites">I miei preferiti</option></select><button id="new-watchlist" class="button ghost">Nuova lista</button></div><div class="kind-tabs" data-tabs="collection"><button data-kind="movie" aria-selected="true">Film</button><button data-kind="series">Serie TV</button></div><div id="selection-toolbar" hidden><span id="selection-count">0 selezionati</span><button id="selection-all" class="button ghost">Seleziona tutti</button><button id="selection-remove" class="button danger">Rimuovi selezionati</button><button id="selection-cancel" class="button ghost">Annulla</button></div><div id="collection-content"></div></section>
+      <section id="settings-view" data-view-panel hidden><header class="page-title"><button class="icon-button" data-nav="home" aria-label="Torna alla home"><svg><use href="#i-back"/></svg></button><h1>Impostazioni</h1></header><div id="settings-content"></div></section>
+      <section id="library-view" data-view-panel hidden><header class="page-title"><button class="icon-button" data-nav="home" aria-label="Torna alla home"><svg><use href="#i-back"/></svg></button><h1>Download</h1><div class="page-tools"><button class="icon-button" id="library-refresh" aria-label="Sincronizza libreria" title="Sincronizza libreria"><svg><use href="#i-refresh"/></svg></button></div></header><div class="kind-tabs" data-tabs="library"><button data-kind="local" aria-selected="true">Video</button><button data-kind="movie">Film</button><button data-kind="series">Serie TV</button></div><div id="library-content"></div><section id="download-jobs"></section></section>
+      <section id="calendar-view" data-view-panel hidden><header class="page-title"><button class="icon-button" data-nav="home" aria-label="Torna alla home"><svg><use href="#i-back"/></svg></button><h1>Calendario Serie TV</h1><div class="page-tools"><svg><use href="#i-calendar"/></svg></div></header><div class="calendar-controls"><label for="calendar-date">Data</label><input id="calendar-date" type="date"><button id="calendar-today" class="button secondary">Oggi</button></div><div id="calendar-content"></div></section>
+      <section id="channels-view" data-view-panel class="channels-view" aria-labelledby="channels-title" hidden>
+        <div class="section-heading"><div><span class="eyebrow">LA TUA VIDEOTECA</span><h1 id="channels-title">I miei canali</h1></div><button id="refresh-channels" class="button secondary"><svg><use href="#i-refresh"/></svg><span>Aggiorna lista e canali</span></button></div>
+        <p class="view-intro">Aggiungi i canali che usi. Lume legge i loro cataloghi e cerca le sorgenti video senza aprire le pagine pubblicitarie.</p>
+        <div class="import-layout">
+          <form id="list-form" class="settings-card"><span class="eyebrow">LISTA AGGIORNABILE</span><h2>Importa da un collegamento</h2><p>Usa la pagina GiardiniBlog indicata o una lista di canali in formato TXT o JSON.</p><label for="list-url">Indirizzo della lista</label><input id="list-url" type="url" value="https://www.giardiniblog.it/canali-veezie/" required><button id="import-list" class="button" type="submit"><svg><use href="#i-plus"/></svg>Importa e verifica</button><p id="list-updated" class="form-note"></p></form>
+          <form id="manual-form" class="settings-card"><span class="eyebrow">AGGIUNTA MANUALE</span><h2>Aggiungi un canale</h2><p>Incolla uno o più indirizzi, uno per riga. La disponibilità dipende dal sito e dal formato supportato.</p><label for="manual-urls">Indirizzi dei canali</label><textarea id="manual-urls" rows="3" placeholder="https://…" required></textarea><button id="add-channel" class="button secondary" type="submit"><svg><use href="#i-plus"/></svg>Aggiungi canali</button></form>
+        </div>
+        <div id="channels-message" class="message" role="status" hidden></div>
+        <div class="section-heading compact"><h2>Canali aggiunti</h2><span id="channel-count" class="muted"></span></div>
+        <div id="channels-list" class="channels-list"></div>
+        <p class="fine-print">Gli indirizzi possono cambiare o smettere di rispondere. Un canale raggiungibile non garantisce che ogni video sia riproducibile. Lume non incorpora pubblicità; eventuali annunci già presenti nel video dipendono dalla sorgente.</p>
+      </section>
+      <footer class="app-footer">Lume · App locale indipendente. Interfaccia ricostruita da un’analisi non ufficiale di Veezie.st. Non affiliato né approvato; i marchi appartengono ai rispettivi proprietari.</footer>
+    </main>
+  </div>
+  <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-title">
+    <button class="icon-button dialog-close" data-close="detail-dialog" aria-label="Chiudi dettaglio"><svg><use href="#i-back"/></svg></button>
+    <div id="detail-loading" class="loading-state"><span class="spinner"></span><p>Leggo il titolo e le sorgenti…</p></div>
+    <div id="detail-content" hidden></div>
+  </dialog>
+  <dialog id="player-dialog" class="player-dialog" aria-labelledby="player-title">
+    <div class="player-top"><div><span id="player-source" class="eyebrow">PLAYER INTEGRATO</span><h2 id="player-title">Riproduzione</h2></div><button class="icon-button" data-close="player-dialog" aria-label="Chiudi player"><svg><use href="#i-close"/></svg></button></div>
+    <div id="video-frame"><video id="video" tabindex="0" aria-label="Video e scorciatoie di riproduzione" playsinline preload="metadata"></video><div class="video-controls"><div class="video-timeline"><span id="video-position">0:00</span><input id="video-seek" type="range" min="0" max="1000" value="0" aria-label="Posizione video"><span id="video-duration">0:00</span></div><div class="video-controls-row"><button id="video-play" class="icon-button" aria-label="Riproduci o pausa"><svg><use href="#i-play"/></svg></button><button data-seek="-10" class="video-text-control" aria-label="Indietro di 10 secondi">−10</button><button data-seek="10" class="video-text-control" aria-label="Avanti di 10 secondi">+10</button><button id="video-mute" class="icon-button" aria-label="Disattiva o attiva audio"><svg><use href="#i-volume"/></svg></button><input id="video-volume" type="range" min="0" max="1" step=".05" value="1" aria-label="Volume"><span class="controls-spacer"></span><label>Audio<select id="video-audio" aria-label="Traccia audio"><option>Predefinita</option></select></label><label>Sottotitoli<select id="video-subtitles" aria-label="Sottotitoli"><option value="-1">Disattivati</option></select></label><label>Qualità<select id="video-quality" aria-label="Qualità video"><option value="-1">Auto</option></select></label><label>Velocità<select id="video-speed" aria-label="Velocità riproduzione"><option value=".75">0,75×</option><option value="1" selected>1×</option><option value="1.25">1,25×</option><option value="1.5">1,5×</option><option value="2">2×</option></select></label></div></div></div>
+    <div id="player-message" class="message" role="status"></div>
+    <div class="player-actions"><button id="mpv-button" class="button secondary"><svg><use href="#i-play"/></svg>Apri con MPV</button><button id="fullscreen-button" class="button ghost">Schermo intero</button><button id="next-episode" class="button secondary" hidden>Episodio successivo</button><button id="download-source" class="button ghost"><svg><use href="#i-download"/></svg>Scarica</button><button id="player-mark-watched" class="button ghost">Segna come visto</button></div>
+  </dialog>
+  <dialog id="action-dialog" class="action-dialog"><button class="icon-button dialog-close" data-close="action-dialog" aria-label="Chiudi finestra"><svg><use href="#i-close"/></svg></button><div id="action-content"></div></dialog>
+  <input type="file" id="backup-file" accept="application/json,.json" hidden>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

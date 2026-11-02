@@ -1,0 +1,25 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'it.gabrielebuilds.lume'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'it.gabrielebuilds.lume'
+        minSdk 26
+        targetSdk 35
+        versionCode 3
+        versionName '0.3.0'
+        buildConfigField 'String', 'BASE_URL', '"https://lume-puce-nine.vercel.app"'
+    }
+    buildFeatures { buildConfig true }
+    signingConfigs {
+        release {
+            if (System.getenv('LUME_STORE_FILE')) {
+                storeFile file(System.getenv('LUME_STORE_FILE'))
+                storePassword System.getenv('LUME_STORE_PASSWORD')
+                keyAlias 'lume'
+                keyPassword System.getenv('LUME_STORE_PASSWORD')
+            }
+        }
+    }
+    buildTypes { release { signingConfig signingConfigs.release; minifyEnabled false } }
+}

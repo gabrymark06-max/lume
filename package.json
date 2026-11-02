@@ -1,0 +1,9 @@
+{
+  "name": "lume",
+  "version": "0.3.0",
+  "private": true,
+  "scripts": {"build":"node scripts/build.mjs"},
+  "dependencies": {
+    "hls.js": "^1.7.4"
+  }
+}
