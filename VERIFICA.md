@@ -58,6 +58,8 @@ La riproduzione dei film dai due host principali resta bloccata. Nel codice orig
 Nessun video di un film scaricato o riprodotto nei controlli. Nessuna pubblicazione o commit. Lume è avviata localmente su 127.0.0.1:8766 e non esposta in rete.
 # Verifica online0.3 — 02/11/2026
 
+Correzione barra TV: prova browser con video sintetico reale e modalità TV1920×1080. Verificati scomparsa dopo3secondi, focus riportato al video, OK che richiama senza pausa, pausa che mantiene i comandi, freccia giù su Play, fullscreen senza fascia riservata e mobile390 senza overflow. Nessun errore JavaScript. Evidenza locale in `screens/player-autohide.json`; nessuna installazione APK richiesta perché cambia l'interfaccia HTTPS caricata all'avvio. Non è una prova diretta sul televisore del proprietario.
+
 Sito di produzione `https://lume-puce-nine.vercel.app`, API realmente eseguite su Vercel. Login con cookie persistente verificato; accesso anonimo a stato/media negato; origine estranea respinta; isolamento tra stati di due browser e ripristino del motore coperti da6 nuovi test. Suite complessiva61 test passati.
 
 Prova browser Edge headless verso il sito pubblico, nessun proxy sul PC: importazione canali, ricerca Matrix, dettaglio, risoluzione sorgente e riproduzione HLS reale. Video1920×800, durata dichiarata8177.874s, avanzamento1.008s poi pausa/chiusura. Non è una prova di visione completa. Nessuna sessione o cronologia del proprietario caricata nel repository. Schermate1440×900 e390×900 senza overflow; nessun errore JavaScript. Focus con frecce verificato in modalità TV1920×1080. Rapporti locali in `screens/cloud-browser.json` e `screens/cloud-smoke.json`, esclusi dal Git pubblico.

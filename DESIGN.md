@@ -2,6 +2,8 @@
 
 ## Estensione telefono e Android/Google TV
 
+Correzione player TV dalla foto del dispositivo: la barra comandi diventa un overlay sul video, senza fascia riservata in basso. Durante la riproduzione scompare dopo3secondi di inattività; pausa/fine video la mantengono visibile. Telecomando, mouse o tocco la richiamano. Su TV, OK o freccia giù con barra nascosta mostrano i comandi e portano il focus a Play senza interrompere il film. Il focus viene riportato al video prima di nascondere i comandi. Nessuna variazione alle sorgenti o all'avanzamento.
+
 La versione online mantiene Mulish, palette scura, rail e locandine esistenti. Su telefono: installazione PWA, safe area, comandi da almeno44px. Su TV: modalità esplicita, focus bianco/arancione leggibile a distanza, spostamento geometrico con frecce, OK per attivare, Indietro per chiudere player/dettagli. Il launcher Android espone Lume senza sostituire il launcher di sistema. Riferimento visivo resta la UI già misurata e verificata, nessuna nuova direzione grafica.
 
 Vercel ospita interfaccia e API stateless: preferiti, profili e progressi risiedono nel browser del dispositivo e viaggiano nella singola richiesta autenticata. Nessun disco server condiviso tra utenti; niente sincronizzazione automatica tra dispositivi. Un codice privato protegge API e video. MPV, cartelle Windows e download in background rimangono nella versione PC e vengono dichiarati indisponibili online. Il player usa richieste HLS separate in streaming; il funzionamento effettivo da un datacenter va verificato contro le sorgenti.
