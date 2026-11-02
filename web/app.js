@@ -623,6 +623,9 @@
       $('#settings-content .setting-disabled p').textContent='I dati sono salvati nel browser di questo dispositivo. Trasferiscili con un backup. Le connessioni ai servizi esterni restano disponibili nella versione PC.';
       const player=$('#settings-content [data-setting="default_player"]');if(player){player.value='integrated';player.disabled=true;}
       $('#settings-content [data-action="download-dir"]')?.closest('.setting-row')?.remove();
+      $$('#settings-content .settings-group-title').filter(e=>e.textContent.includes('Download')).forEach(e=>e.remove());
+      const info=$$('#settings-content .setting-row').find(e=>e.querySelector('h2')?.textContent==='Lume');
+      if(info){info.querySelector('p').textContent='App online indipendente. Nessun modulo pubblicitario integrato.';info.querySelector('.setting-value').textContent='ONLINE';}
       $('#settings-content').insertAdjacentHTML('afterbegin','<p class="message">Lume online · Funziona con il PC spento. Profili, liste e progressi rimangono su questo dispositivo.</p><p><a class="button ghost" href="/installa.html">Installa su telefono o TV</a></p>');
     }
     if(integrations.length)$('#settings-content .setting-disabled').outerHTML=integrations.map(service=>settingRow(service.name,service.connected?`Account ${service.account?.name||'collegato'}${service.validated_at?' · Verificato '+friendlyDate(service.validated_at):''}`:'Configurazione disponibile: richiede il tuo account e le tue credenziali.',`<button class="button ghost" data-integration="${escapeHTML(service.id)}">${service.connected?'Gestisci connessione':'Configura'}</button>`)).join('');

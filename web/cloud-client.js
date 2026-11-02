@@ -63,4 +63,6 @@
   }
   window.LumeCloud = {ready,request};
   document.documentElement.classList.add('cloud-mode');
+  const footer = document.querySelector('.app-footer');
+  if (footer) footer.textContent = 'Lume · La tua videoteca online. App indipendente, non affiliata a Veezie.st.';
 })();
